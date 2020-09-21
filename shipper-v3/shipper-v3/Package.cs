@@ -1,20 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
+ * Grading ID: E3780
+ * Program: 1A
+ * Due Date: September 21 2020
+ * Course: CIS 200-76
+ * Description: Creates the abstract Package class.
+ */
+
+using System;
 
 namespace shipper_v3
 {
     abstract class Package : Parcel
     {
-        private Address _origin,
-            _destination;
+        // Backing fields 
+        private double _length, // Length of package
+            _width,             // Width of package
+            _height,            // Height of package
+            _weight;            // Weight of package
 
-        private double _length,
-            _width,
-            _height,
-            _weight;
-
-        public Package(Address origin, Address destination, double length, double width, double height, double weight) : base(origin, destination)
+        /*
+         * Preconditions: All arguments are not null.
+         * Postcondition: A Package object is abstractly created.
+         */
+        public Package(Address origin, Address destination, double length, double width,
+            double height, double weight) : base(origin, destination)
         {
             Length = length;
             Width = width;
@@ -24,7 +33,16 @@ namespace shipper_v3
 
         public double Length
         {
+            /*
+             * Preconditions: None
+             * Postcondition: The length is returned.
+             */
             get => _length;
+
+            /*
+             * Preconditions: The value provided is not negative.
+             * Postcondition: Length is set to the value provided.
+             */
             set
             {
                 if (Double.IsNegative(value))
@@ -36,7 +54,16 @@ namespace shipper_v3
 
         public double Width
         {
+            /*
+             * Preconditions: None
+             * Postcondition: The width is returned.
+             */
             get => _width;
+
+            /*
+             * Preconditions: The value provided is not negative.
+             * Postcondition: Width is set to the value provided.
+             */
             set
             {
                 if (Double.IsNegative(value))
@@ -48,7 +75,16 @@ namespace shipper_v3
 
         public double Height
         {
+            /*
+             * Preconditions: None
+             * Postcondition: The height is returned.
+             */
             get => _height;
+
+            /*
+             * Preconditions: The value provided is not negative.
+             * Postcondition: Height is set to the value provided.
+             */
             set
             {
                 if (Double.IsNegative(value))
@@ -60,7 +96,16 @@ namespace shipper_v3
 
         public double Weight
         {
+            /*
+             * Preconditions: None
+             * Postcondition: The weight is returned.
+             */
             get => _weight;
+
+            /*
+             * Preconditions: The value provided is not negative.
+             * Postcondition: Weight is set to the value provided.
+             */
             set
             {
                 if (Double.IsNegative(value))
@@ -70,6 +115,10 @@ namespace shipper_v3
             }
         }
 
+        /*
+         * Preconditions: None
+         * Postcondition: Returns a formatted string.
+         */
         public override string ToString() => base.ToString() +
             $"{Environment.NewLine}{nameof(Length)} {nameof(Width)} {nameof(Height)} {nameof(Weight)}{Environment.NewLine}" +
             "------ ----- ------ ------" +

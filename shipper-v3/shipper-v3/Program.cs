@@ -1,11 +1,10 @@
-﻿// Program 0
-// CIS 200-76
-// Fall 2020
-// Due: 9/7/2020
-// By: Andrew L. Wright (students use Grading ID)
-
-// File: Program.cs
-// Simple test program for initial Parcel classes
+﻿/*
+ * Grading ID: E3780
+ * Program: 1A
+ * Due Date: September 21 2020
+ * Course: CIS 200-76
+ * Description: Includes sample data to test the Address and children of the Parcel class.
+ */
 
 using System;
 using System.Collections.Generic;
@@ -15,7 +14,7 @@ namespace shipper_v3
     class Program
     {
         // Precondition:  None
-        // Postcondition: Small list of Parcels is created and displayed
+        // Postcondition: Small list of packages are created and displayed
         static void Main(string[] args)
         {
             // List of sample addresses
