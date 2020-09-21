@@ -18,7 +18,7 @@ namespace shipper_v3
             get => _delivery;
             set
             {
-                if (value >= Delivery.Early && value <= Delivery.Saver)
+                if (!Enum.IsDefined(typeof(Delivery), value))
                     throw new ArgumentOutOfRangeException(nameof(DeliveryType), value, $"{nameof(DeliveryType)} must be {Delivery.Early} or {Delivery.Saver}.");
 
                 _delivery = value;
