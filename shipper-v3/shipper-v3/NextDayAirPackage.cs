@@ -12,10 +12,10 @@ namespace shipper_v3
             ExpressFee = expressFee;
         }
 
-        private decimal ExpressFee // Does the get need to be public??
+        public decimal ExpressFee
         {
             get => _expressFee;
-            set
+            private set
             {
                 if (value <= decimal.Zero)
                     throw new ArgumentOutOfRangeException(nameof(ExpressFee), value, $"{nameof(ExpressFee)} must be greater than {decimal.Zero:C}.");
