@@ -71,8 +71,8 @@ namespace shipper_v3
         }
 
         public override string ToString() => base.ToString() +
-            $"{nameof(Length)} {nameof(Width)} {nameof(Height)} {nameof(Weight)}{Environment.NewLine}" +
+            $"{Environment.NewLine}{nameof(Length)} {nameof(Width)} {nameof(Height)} {nameof(Weight)}{Environment.NewLine}" +
             "------ ----- ------ ------" +
-            $"{Environment.NewLine}{Length,-6} {Width,6} {Height,12} {Weight,18}";
+            $"{Environment.NewLine}{Length,-1} {Width,6} {Height,7} {Weight,6}{Environment.NewLine}";
     }
 }
