@@ -46,7 +46,7 @@ namespace shipper_v3
                 heavyCharge = HEAVY_CHARGE * weight;
 
             if (IsLarge())
-                largeCharge = LARGE_CHARGE * baseCharge;
+                largeCharge = LARGE_CHARGE * dimensions;
 
             return baseCharge + heavyCharge + largeCharge;
         }
